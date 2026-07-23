@@ -1,12 +1,10 @@
 class Solution:
     def sumAndMultiply(self, n: int) -> int:
         s=str(n)
-        r=""
-        su=0
-        for i in s:
-            if i!="0":
-                r+=i
-            su+=int(i)
-        if r=="":
-            return 0
-        return int(r)*su
+        nz=[ch for ch in s if ch!="0"]
+        if not nz:
+            x=0
+        else:
+            x=int("".join(nz))
+        dig_sum=sum(int(ch) for ch in nz)
+        return x*dig_sum

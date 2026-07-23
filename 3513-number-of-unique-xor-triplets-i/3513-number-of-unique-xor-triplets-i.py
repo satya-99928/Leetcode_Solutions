@@ -1,7 +1,12 @@
 class Solution:
     def uniqueXorTriplets(self, nums: List[int]) -> int:
-        n=len(nums)
-        if n<3:
+        n = len(nums)
+
+        if n <= 2:
             return n
-        return 1<<n.bit_length()
-        
+
+        mask = 0
+        for num in nums:
+            mask |= num
+
+        return mask + 1

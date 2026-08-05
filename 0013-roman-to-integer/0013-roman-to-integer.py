@@ -9,11 +9,12 @@ class Solution:
         "D":500,
         "M":1000}
         ans=0
-        for i in range(len(s)):
-            if i<len(s)-1 and values[s[i]]<values[s[i+1]]:
+        for i in range(len(s)-1):
+            if  values[s[i]]<values[s[i+1]]:
                 ans-=values[s[i]]
             else:
                 ans+=values[s[i]]
+        ans+=values[s[-1]]
         return ans
 
 
